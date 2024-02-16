@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class UIExtendedToolbar: UIToolbar {
+open class UIExtendedToolbar: UIToolbar {
     // MARK: - Private Properties
     private var toolbarContentView: UIView? {
         return subviews.first { subview in
