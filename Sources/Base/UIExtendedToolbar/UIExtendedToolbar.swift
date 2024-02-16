@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIExtendedToolbar: UIToolbar {
+public class UIExtendedToolbar: UIToolbar {
     // MARK: - Private Properties
     private var toolbarContentView: UIView? {
         return subviews.first { subview in
@@ -16,16 +16,16 @@ class UIExtendedToolbar: UIToolbar {
     }
     
     // MARK: - Public Properties
-    private(set) var contentView: UIView!
+    public private(set) var contentView: UIView!
     
     // MARK: - init(frame:)
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupContentView()
     }
     
     // MARK: - init(coder:)
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -56,14 +56,14 @@ class UIExtendedToolbar: UIToolbar {
     }
     
     // MARK: - layoutSubviews()
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         layoutExtendedToolbarContentView()
         layoutToolbarContentView()
     }
     
     // MARK: - sizeThatFits(_:)
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         let sizeThatFits = super.sizeThatFits(size)
         let additionalHeight = contentView.systemLayoutSizeFitting(sizeThatFits).height
         let totalHeight = sizeThatFits.height + additionalHeight
