@@ -16,7 +16,7 @@ open class UIExtendedToolbar: UIToolbar {
     }
     
     // MARK: - Public Properties
-    public private(set) var contentView: UIView!
+    open private(set) var contentView: UIView!
     
     // MARK: - init(frame:)
     public override init(frame: CGRect) {
@@ -56,14 +56,14 @@ open class UIExtendedToolbar: UIToolbar {
     }
     
     // MARK: - layoutSubviews()
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         layoutExtendedToolbarContentView()
         layoutToolbarContentView()
     }
     
     // MARK: - sizeThatFits(_:)
-    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         let sizeThatFits = super.sizeThatFits(size)
         let additionalHeight = contentView.systemLayoutSizeFitting(sizeThatFits).height
         let totalHeight = sizeThatFits.height + additionalHeight
